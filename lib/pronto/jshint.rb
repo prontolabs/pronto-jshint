@@ -3,7 +3,7 @@ require 'jshintrb'
 
 module Pronto
   class JSHint < Runner
-    def run(patches, commit)
+    def run(patches, _)
       return [] unless patches
 
       patches.select { |patch| patch.additions > 0 }
