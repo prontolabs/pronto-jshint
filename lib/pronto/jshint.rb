@@ -7,9 +7,9 @@ module Pronto
       return [] unless patches
 
       patches.select { |patch| patch.additions > 0 }
-             .select { |patch| js_file?(patch.new_file_full_path) }
-             .map { |patch| inspect(patch) }
-             .flatten.compact
+        .select { |patch| js_file?(patch.new_file_full_path) }
+        .map { |patch| inspect(patch) }
+        .flatten.compact
     end
 
     def inspect(patch)
@@ -17,7 +17,7 @@ module Pronto
 
       offences.map do |offence|
         patch.added_lines.select { |line| line.new_lineno == offence['line'] }
-                         .map { |line| new_message(offence, line) }
+          .map { |line| new_message(offence, line) }
       end
     end
 
