@@ -13,7 +13,7 @@ module Pronto
     end
 
     def inspect(patch)
-      offences = Jshintrb.lint(patch.new_file_full_path).compact
+      offences = Jshintrb.lint(patch.new_file_full_path, :jshintrc).compact
 
       offences.map do |offence|
         patch.added_lines.select { |line| line.new_lineno == offence['line'] }
