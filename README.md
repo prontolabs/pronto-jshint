@@ -10,3 +10,7 @@ Pronto runner for [JSHint](http://www.jshint.com/), JavaScript code quality tool
 ## Prerequisites
 
 You'll need to install one of the runtimes supported by [ExecJS](https://github.com/sstephenson/execjs#execjs).
+
+## Configuration
+
+Configuring JSHint via .jshintrc will work just fine with pronto-jshint.
