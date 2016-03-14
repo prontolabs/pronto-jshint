@@ -3,10 +3,10 @@ require 'jshintrb'
 
 module Pronto
   class JSHint < Runner
-    def run(patches, _)
-      return [] unless patches
+    def run
+      return [] unless @patches
 
-      patches.select { |patch| patch.additions > 0 }
+      @patches.select { |patch| patch.additions > 0 }
         .select { |patch| js_file?(patch.new_file_full_path) }
         .map { |patch| inspect(patch) }
         .flatten.compact
@@ -29,7 +29,7 @@ module Pronto
       path = line.patch.delta.new_file[:path]
       level = :warning
 
-      Message.new(path, line, level, offence['reason'])
+      Message.new(path, line, level, offence['reason'], nil, self.class)
     end
 
     def js_file?(path)

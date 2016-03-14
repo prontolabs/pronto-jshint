@@ -2,10 +2,10 @@ require 'spec_helper'
 
 module Pronto
   describe JSHint do
-    let(:jshint) { JSHint.new }
+    let(:jshint) { JSHint.new(patches) }
 
     describe '#run' do
-      subject { jshint.run(patches, nil) }
+      subject { jshint.run }
 
       context 'patches are nil' do
         let(:patches) { nil }
