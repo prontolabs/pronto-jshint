@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.author = 'Mindaugas Mozūras'
   s.email = 'mindaugas.mozuras@gmail.com'
-  s.homepage = 'http://github.org/mmozuras/pronto-jshint'
+  s.homepage = 'http://github.com/mmozuras/pronto-jshint'
   s.summary = 'Pronto runner for JSHint, JavaScript code quality tool'
 
   s.licenses = ['MIT']
